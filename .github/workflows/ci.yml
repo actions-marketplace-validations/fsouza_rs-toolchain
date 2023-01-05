@@ -10,7 +10,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.1.0
+      - uses: actions/checkout@v3.3.0
 
       - uses: actions/setup-node@v3.5.1
         with:
@@ -38,7 +38,7 @@ jobs:
           - windows-latest
 
     steps:
-      - uses: actions/checkout@v3.1.0
+      - uses: actions/checkout@v3.3.0
 
       - id: toolchain
         uses: ./
@@ -60,7 +60,7 @@ jobs:
   install_nightly:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.1.0
+      - uses: actions/checkout@v3.3.0
       - uses: ./
         with:
           profile: minimal
@@ -73,7 +73,7 @@ jobs:
     steps:
       - run: apt-get update && apt-get install -y curl
 
-      - uses: actions/checkout@v3.1.0
+      - uses: actions/checkout@v3.3.0
 
       - uses: ./
         with:
@@ -82,6 +82,6 @@ jobs:
   install_stable_through_rust_toolchain_file:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.1.0
+      - uses: actions/checkout@v3.3.0
       - run: echo "stable" > ./rust-toolchain
       - uses: ./
